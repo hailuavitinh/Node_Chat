@@ -15,17 +15,47 @@
             #field{
                 width: 350px;
             }
+
+            /*Begin Video Group*/
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction:row;
+                flex-wrap:wrap;
+                justify-content: space-around;
+
+            }
         </style>
-        <script  src="./js/chat.js" ></script>
-        <script src="./js/socket.io.js" ></script>
+        <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+        <!--<script  src="./js/chat.js" ></script>
+        <script src="./js/socket.io.js" ></script>-->
     </head>
     <body>
-        <h1>Node Socket.io</h1>
+        <!--<h1>Node Socket.io</h1>
         <div id="content">
         </div>
         <div class="controls">
             <input type="text" id="field">
             <button id="send">send</button>
+        </div>-->
+        <button type="button" onclick="append()">Append</button>
+        <div class="container" >
+            
         </div>
+        <script>
+             var i = 0;
+            function append(){
+                i = i + 1;
+                var div = document.createElement('div');
+                div.setAttribute("style", "width: 200px; height: 150px;border: solid gray ;margin-top: 10px;");
+                 div.setAttribute("id", "div_"+i);
+                  
+                $(".container").prepend(div);
+            }
+        </script>
     </body>
 </html>
