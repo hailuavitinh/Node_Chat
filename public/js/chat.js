@@ -1,6 +1,10 @@
 window.onload = function(){
     var message = [];
-    var socket = io.connect('http://192.168.1.18:3005');
+    var socket = io.connect('192.168.1.23:8080',{reconnect:!1,
+        secure:true,
+        "force new connection":!0,
+        transports:["websocket","polling"]
+    });
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");

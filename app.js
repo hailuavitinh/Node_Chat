@@ -43,6 +43,8 @@ io.sockets.on('connection',function(socket){
     });
 });
 
+console.log("Socket version:",require("socket.io/package").version);
+
 app.get("/",function(req,res){
     res.render("index");
 })
